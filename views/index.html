@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Image Converter & 4K Upscaler</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f0f2f5; 
+            color: #333;
+            text-align: center; 
+            padding: 50px 20px; 
+        }
+        .container { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            display: inline-block; 
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1); 
+        }
+        h2 { color: #1a73e8; margin-bottom: 10px; }
+        p { color: #666; font-size: 14px; margin-bottom: 30px; }
+        input[type="file"], select, button { 
+            width: 100%;
+            margin: 12px 0; 
+            padding: 12px; 
+            font-size: 16px; 
+            border-radius: 6px; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box;
+        }
+        .checkbox-container {
+            text-align: left;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px dashed #1a73e8;
+        }
+        .checkbox-container input {
+            width: auto;
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .checkbox-container label {
+            cursor: pointer;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+        button { 
+            background: #1a73e8; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover { background: #1557b0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Image Converter & 4K Upscaler</h2>
+    <p>Convert your images instantly to PNG, JPG, or WebP, and enhance them to Ultra HD 4K quality for free.</p>
+    
+    <form action="/convert" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        
+        <select name="format">
+            <option value="png">Convert to PNG</option>
+            <option value="jpeg">Convert to JPG (JPEG)</option>
+            <option value="webp">Convert to WebP</option>
+        </select>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" name="upscale_4k" id="upscale_4k" value="yes">
+            <label for="upscale_4k">⚡ Upscale to Ultra HD 4K Quality</label>
+        </div>
+        
+        <button type="submit">Convert & Download</button>
+    </form>
+</div>
+
+</body>
+</html>
